@@ -1,6 +1,8 @@
 #ifndef MISC_ELISTAIR_COMMAND_HPP
 #define MISC_ELISTAIR_COMMAND_HPP
 
+#include <cstdint>
+
 namespace misc_elistair {
     /** Controls the power through the tether */
     enum PowerMode {
