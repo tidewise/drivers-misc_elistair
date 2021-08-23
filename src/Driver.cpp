@@ -57,9 +57,9 @@ Status Driver::read() {
 
     Status status;
     status.time = base::Time::now();
-    status.power = lsbPower + (msbPower << 8);
-    status.cable_length = static_cast<float>(lsbCableLength + (msbCableLength << 8)) * 0.1;
-    status.cable_speed = static_cast<float>(cableSpeed) * 0.1;
+    status.power = (lsbPower + (msbPower << 8)) * 0.1;
+    status.cable_length = static_cast<float>(lsbCableLength + (msbCableLength << 8)) * 0.01;
+    status.cable_speed = static_cast<float>(cableSpeed) * 0.01;
     status.temperature = temperature;
     status.flight_time = base::Time::fromSeconds(
         flightTimeHours * 3600 + flightTimeMinutes * 60
